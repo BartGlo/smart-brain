@@ -21,7 +21,7 @@ export default class Register extends Component {
 
   onSubmitSignIn = () => {
     if (this.state.email && this.state.password && this.state.name) {
-      fetch('http://localhost:3000/register', {
+      fetch('https://damp-falls-98341.herokuapp.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

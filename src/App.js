@@ -68,7 +68,7 @@ export default class App extends Component {
   onButtonSubmit = () => {
     const imageUrl = this.state.input
     this.setState({ imageUrl })
-    fetch('http://localhost:3000/detectFace', {
+    fetch('https://damp-falls-98341.herokuapp.com/detectFace', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ export default class App extends Component {
       .then(detectFace => detectFace.json())
       .then(response => {
         if (response.status && response.status === 'success') {
-          fetch('http://localhost:3000/image', {
+          fetch('https://damp-falls-98341.herokuapp.com/image', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
